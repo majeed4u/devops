@@ -1,0 +1,17 @@
+- name: install net-tools on master
+  hosts: master
+  become: yes
+  tasks:
+    - name: install net-tools
+      apt:
+        name: net-tools
+        state: present
+
+- name: Install net-tools on nodes
+  hosts: nodes
+  become: yes
+  tasks:
+    - name: Install net-tools
+      apt:
+        name: net-tools
+        state: present
